@@ -10,47 +10,47 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) { }
   title = 'Pun-ny Jokes';
 
-  jokeAPI={setup:"",punchline:""};
+  jokeAPI = {setup: ' ', punchline: ''};
   isLoading = false;
   extractionFlag = false;
-  
   selectedType = 'all';
-  apiEndPoint = 'https://official-joke-api.appspot.com/jokes'
+  apiEndPoint = 'https://official-joke-api.appspot.com/jokes';
 
-  ngOnInit() {
-    this.getJoke()
+  ngOnInit(): void {
+    this.getJoke();
   }
 
-  getJoke()
+  getJoke(): void
   {
-    let apiSuffix;
+    let apiSuffix: any;
 
-    switch(this.selectedType){
+    switch (this.selectedType){
       case 'all':
       {
-        apiSuffix ='/random';
+        apiSuffix = '/random';
         this.extractionFlag = false;
         break;
       }
       case 'general':
       {
-        apiSuffix ='/general/random'
+        apiSuffix = '/general/random';
         this.extractionFlag = true;
         break;
       }
       case 'programming':
       {
-        apiSuffix ='/programming/random';
+        apiSuffix = '/programming/random';
         this.extractionFlag = true;
         break;
       }
-      default: 
+      default:
       {
-        apiSuffix ='/random';
+        apiSuffix = '/random';
       }
     }
     this.isLoading = true;
-    this.http.get(this.apiEndPoint+apiSuffix).subscribe((data: Config) => { this.extractionFlag?this.jokeAPI = { ...data[0] }:this.jokeAPI = { ...data }; this.isLoading = false;});
+    this.http.get(this.apiEndPoint + apiSuffix).subscribe((data: Config) => {
+      this.extractionFlag ? this.jokeAPI = { ...data[0] } : this.jokeAPI = { ...data }; this.isLoading = false; });
 
   }
 }
@@ -60,4 +60,4 @@ interface Config {
     type: string;
     setup: string;
     punchline: string;
-  }
+}

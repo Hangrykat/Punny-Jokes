@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
-import { Input } from '@angular/core'
-import { Output } from '@angular/core'
+import { Input } from '@angular/core';
+import { Output } from '@angular/core';
 
 @Component({
   selector: 'app-joke',
@@ -9,16 +9,16 @@ import { Output } from '@angular/core'
 })
 export class JokeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   @Input() joke;
   @Input() isLoading;
-  @Output() onNext = new EventEmitter();
+  @Output() Next = new EventEmitter();
 
-  next() {
-    this.onNext.emit();
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  next(): void {
+    this.Next.emit();
   }
 }
