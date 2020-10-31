@@ -256,11 +256,14 @@ $size: 170px; // (Fully responsive)
 
 @media only screen and (max-width: 600px) {
   header {
-    height: 17vh;
+    height: 15vh;
     font-size: 1.3rem;
     padding: 0;
   }
 
+  section {
+    height: 80vh;
+}
   h1 {
     font-size: 2em;
 
