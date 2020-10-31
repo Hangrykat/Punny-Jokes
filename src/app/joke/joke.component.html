@@ -1,0 +1,14 @@
+<mat-card>
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+  <mat-card-content *ngIf="!isLoading">
+    <h2>{{joke.setup}}</h2>
+    <br/>
+    <br/>
+    <h2>{{joke.punchline}}</h2>
+  </mat-card-content>
+  <mat-card-actions *ngIf="!isLoading">
+    <button mat-flat-button color="accent" (click)='next()'>NEXT</button>
+  </mat-card-actions>   
+</mat-card>
