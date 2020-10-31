@@ -9,9 +9,9 @@ import { Output } from '@angular/core';
 })
 export class JokeComponent implements OnInit {
 
-  @Input() joke;
-  @Input() isLoading;
-  @Output() Next = new EventEmitter();
+  @Input() joke: any;
+  @Input() isLoading: any;
+  @Output() nextJoke = new EventEmitter();
 
   constructor() { }
 
@@ -19,6 +19,6 @@ export class JokeComponent implements OnInit {
   }
 
   next(): void {
-    this.Next.emit();
+    this.nextJoke.emit();
   }
 }

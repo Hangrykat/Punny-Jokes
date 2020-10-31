@@ -6,7 +6,7 @@
     <mat-radio-button value='general'>General</mat-radio-button>
     <mat-radio-button value='programming'>Programming</mat-radio-button>
   </mat-radio-group>
-  <app-joke [isLoading]="isLoading" [joke]='jokeAPI' (onNext)='getJoke()'></app-joke>
+  <app-joke [isLoading]="isLoading" [joke]='jokeAPI' (nextJoke)='getJoke()'></app-joke>
   <div class="cat">
     <div class="ear ear--left"></div>
     <div class="ear ear--right"></div>
